@@ -16,7 +16,7 @@ function buildTable(data){
         let cell = row.append("td");
         cell.text(val);
         }
-    );
+    )
     });
 
 
@@ -30,10 +30,10 @@ function handleClick() {
         if(date){
             filteredData = filteredData.filter(row=>row.datetime === date);
         };
-}
+        
 // Rebuild the data using the filtered data
-buildTable(fil);
-
+buildTable(filteredData);
+}
 //Attach an event to listen for the form button
 d3.selectAll("#filter-btn").on("click", handleClick);
 
