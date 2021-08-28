@@ -17,6 +17,10 @@ This webpage features a very simple and user friendly interface to specify the g
 **Step 2**: Hit Return, click on any point of the page's body, or move to the next field. 
 
 ### Summary 
-Due to our data file's current structure we face a serious drawback that may affect the functionality of the page. The date format cannot be easily specified. 
 
+Due to our data file's current structure we face a serious drawback that may affect the functionality of the page. The date format cannot be easily specified. Right now our filter accepts the following date format : M/DD/YYYY. That works fine for the data we have now as all sightings happened in January. If we later have a sighting in October and we perform a search based on the date filter we will get an empty table. To resolve this we would have to alter the value for the Date key to the following format : MM/DD/YYYY
+
+In the same way State and City names are in lower case letters which might confuse a user expecting uppercase letter for state values and capitalized city names as is the common practice. If for example one enters CA for California will get no results. This could be resolved by defining "example" placeholders like "st" for State or "city" for City but correcting our data file is surely a more efficient process. 
+
+In terms of readability, the duration format has to be in the same unit. Either seconds or minutes so it is easily comparable. We also have to use either minutes or mins. or min but all these at the same time. This also goes back to modifying our data.js
 
