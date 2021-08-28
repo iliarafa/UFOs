@@ -6,19 +6,24 @@ This project aims to create a webpage featuring a dynamic table to provide an in
 ### Results
 This webpage features a very simple and user friendly interface to specify the given search criteria. Five filters are in place. By default the table is populated with our initial set of data. The process is as follows : 
 
-#### _narrowing down the search: 
+### _narrowing down the search: 
 **Step 1**: Enter value in desired field. \
 **Step 2**: Hit return OR move to the next field. Both actions display the updated filtered table. \
 **Step 3**: Enter value in next field and repeat the process in Step 2. 
 
-Below is our table filtered for light shaped sightings in the US for 01/09/2010
-
 ![](static/images/light.png)
 
+*Our table filtered for light shaped sightings in the US for 01/09/2010*
 
-#### _broadening the search: 
+
+### _broadening the search: 
 **Step 1**: Backspace on the field you want to remove until you reach the placeholder value. \
 **Step 2**: Hit Return, click on any point of the page's body, or move to the next field. 
+
+
+![](static/images/nolight.png)
+
+*the new table after we've removed the "shape" filter*
 
 ### Summary 
 
@@ -34,5 +39,5 @@ This could be resolved by defining "example" placeholders like "st" for State or
 Here is what the corrected data looks like now : 
 ![](static/images/after.png)
 
-In terms of readability, the duration format has to be in the same unit. Either seconds or minutes so it is easily comparable. We also have to use either minutes or mins. or min but all these at the same time. This also goes back to modifying our data.js
+In terms of readability, the duration format has to be in the same unit. In our initial data we had entries in minutes, mins., min, seconds,sec and also qualitative entries such as, unknown, do not remember, all night long etc. If we later decide to include a duration filter we would need the duration data measured with the same unit. Therefore a prudent move would be to modify the entries to the smallest unit which in this case is seconds. In entries that include "between x and y hours" I used the average duration (E.g. 1-2 hours = 1,5 hours = 5400s). For entries including "unknown" I used the value of 1 second. For durations that include "all night long" or "from dusk till dawn" I calculated 6 hours which translates to 3600s. 
 
