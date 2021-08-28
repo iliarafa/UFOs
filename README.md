@@ -11,6 +11,10 @@ This webpage features a very simple and user friendly interface to specify the g
 **Step 2**: Hit return OR move to the next field. Both actions display the updated filtered table. \
 **Step 3**: Enter value in next field and repeat the process in Step 2. 
 
+Below is our table filtered for light shaped sightings in the US for 01/09/2010
+
+![](static/images/light.png)
+
 
 #### _broadening the search: 
 **Step 1**: Backspace on the field you want to remove until you reach the placeholder value. \
@@ -23,12 +27,12 @@ Due to our data file's initial structure we faced a serious drawback that could 
 In the same way State and City names are in lower case letters which might confuse a user expecting uppercase letter for state values and capitalized city names as is the common practice. If for example one enters CA for California will get no results.
 
 Here is our initial data displayed on the table :
-![](images/before.png)
+![](static/images/before.png)
 
 This could be resolved by defining "example" placeholders like "st" for State or "city" for City but correcting our data file is surely a more efficient process. 
 
 Here is what the corrected data looks like now : 
-
+![](static/images/after.png)
 
 In terms of readability, the duration format has to be in the same unit. Either seconds or minutes so it is easily comparable. We also have to use either minutes or mins. or min but all these at the same time. This also goes back to modifying our data.js
 
