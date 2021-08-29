@@ -34,13 +34,17 @@ Due to our data file's initial structure we faced a serious drawback that could 
 
 *Here is our initial data displayed on the table :*
 
-![](static/images/before.png)
+![](static/images/dirty_data.png)
 
-This could be resolved by defining "example" placeholders like "st" for State or "city" for City but correcting our data.js file is surely a more efficient process.
+This could be resolved by defining "example" placeholders like "st" for State or "city" for City. In this example we are using M/DD/YYYY to indicate the code expects one digit for month, two for day and four for year. In the city field we use lower case placeholder "city"  and for the state we use "st" to indicate we expect the input in small letters for both fields. This might work but what the best practice would be to edit our data.js file by capitalizing the city name, using all caps for the state and use the MM/DD/YYYY format for dates. (*note: Once we modify the date for a single sighting then the field automatically starts accepting the new format)
+
+
+but correcting our data.js file is surely a more efficient process.
 
 *Here is what the corrected data looks like now :*
 
 ![](static/images/after.png)
 
-  In terms of readability, the duration format has to be in the same unit. In our initial data we had entries in minutes, mins., min, seconds,sec and also qualitative entries such as, unknown, do not remember, all night long etc. If we later decide to include a duration filter we would need the duration data measured with the same unit. Therefore a prudent move would be to modify the entries to the smallest unit which in this case is seconds. In entries that include "between x and y hours" I used the average duration (E.g. 1-2 hours = 1,5 hours = 5400s). For entries including "unknown" I used the value of 1 second. For durations that include "all night long" or "from dusk till dawn" I calculated 6 hours which translates to 3600s. 
+  One useful development for our webpage would be to include a duration filter so that the user can specify if they are looking for brief events or longer events. A sudden short lived light shape does not carry the same weight as an object that hovers over a city for 30 minutes. This brings us to another big data problem. When we examine our initial data we see that duration entries are made using different formats, sometimes different units (weeks, days, minutes, seconds) and also qualitative entries such as, unknown, do not remember, all night long etc. 
+  To be able to use a duration filter we need everything converted in a single unit and with the same extension *(sec or s)* .To modify the entries to the smallest unit which in this case is seconds. In entries that include "between x and y hours" I used the average duration (E.g. 1-2 hours = 1,5 hours = 5400s). For entries including "unknown" I used the value of 1 second. For durations that include "all night long" or "from dusk till dawn" I calculated 6 hours which translates to 3600s. Here is what the table looks like with the new filter and modified Duration entries. 
 
